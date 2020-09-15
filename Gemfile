@@ -41,10 +41,17 @@ gem 'devise'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # Added by us
+  gem 'capybara'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 group :test do
   gem 'rspec'
+  # Added by us
+  gem 'webdrivers'
+  gem 'selenium-webdriver'
 end
 
 group :development do
