@@ -11,6 +11,9 @@ RSpec.describe User, type: :model do
     test_u.email = 'test@test.com'
     test_u.name = 'pastor'
     test_u.gravatar_url = 'http://google.com'
+    test_u.password = 'thisisencrypted'
+    test_u.reset_password_token = 'thisisatoken'
+    test_u.reset_password_sent_at = Date.today
     test_u.save
     expect(test_u).to be_valid
   end
