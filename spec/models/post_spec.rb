@@ -1,3 +1,4 @@
+# rubocop: disable Layout/LineLength
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
@@ -13,3 +14,4 @@ RSpec.describe Post, type: :model do
     expect(test_p).to be_valid
   end
 end
+# rubocop: enable Layout/LineLength
