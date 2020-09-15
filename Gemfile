@@ -50,8 +50,8 @@ end
 group :test do
   gem 'rspec'
   # Added by us
-  gem 'webdrivers'
   gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :development do

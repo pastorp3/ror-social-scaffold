@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   it 'FAIL CHECK - Checks if a user can be created' do
     test_u = User.create(email: nil)
     expect(test_u).to be_invalid
