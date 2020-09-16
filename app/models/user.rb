@@ -17,7 +17,6 @@ class User < ApplicationRecord
     friendships.each do |friend|
       friends_total.push(friend.friend) if friend.status
     end
-
     other_friendships.each do |friend|
       friends_total.push(friend.user) if friend.status
     end
