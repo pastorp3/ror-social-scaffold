@@ -52,6 +52,7 @@ group :test do
   # Added by us
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'database_cleaner-active_record'
 end
 
 group :development do

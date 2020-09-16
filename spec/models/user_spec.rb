@@ -1,12 +1,14 @@
 require 'rails_helper'
 
+# rubocop: disable Layout/LineLength
+
 RSpec.describe User, type: :model do
-  test_u = User.create(email: 'test2@test.com', name: 'mateo', gravatar_url: 'http://google.com', password: 'this is a password')
+  User.create(email: 'test2@test.com', name: 'mateo', gravatar_url: 'http://google.com', password: 'this is a password')
   test_u1 = User.first
-  test_u = User.create(email: 'test@test.com', name: 'pastor', gravatar_url: 'http://google.com', password: 'this is a password')
+  User.create(email: 'test@test.com', name: 'pastor', gravatar_url: 'http://google.com', password: 'this is a password')
   test_u2 = User.last
-  test_f = Friendship.create(user_id: test_u1.id , friend_id: test_u2.id, status: false)
-  test_f = Friendship.create(user_id: test_u2.id , friend_id: test_u1.id, status: false)
+  Friendship.create(user_id: test_u1.id, friend_id: test_u2.id, status: false)
+  Friendship.create(user_id: test_u2.id, friend_id: test_u1.id, status: false)
 
   it 'FAIL CHECK - Checks if a user can be created' do
     test_u = User.create(email: nil)
@@ -22,11 +24,15 @@ RSpec.describe User, type: :model do
   end
 
   it 'Checks for the other_friendships association' do
-    expect(test_u1.friendships).not_to be_nil
+    expect(test_u1.other_friendships).not_to be_nil
   end
 
   it 'Checks for the friends_total method - NO FRIENDS' do
     expect(test_u1.total_friends).to be_empty
+  end
+
+  it 'Checks the recieved_friend_request method' do
+    expect(test_u1.recieved_friend_request).not_to be_empty
   end
 
   it 'Checks the confirm_request method' do
@@ -41,4 +47,10 @@ RSpec.describe User, type: :model do
   it 'Checks the rollback_request method' do
     expect(test_u2.rollback_request(test_u1.id)).to be true
   end
+
+  it 'Checks the sent_friends_request method' do
+    expect(test_u1.sent_friends_request).not_to be_empty
+  end
+
 end
+# rubocop: enable Layout/LineLength
