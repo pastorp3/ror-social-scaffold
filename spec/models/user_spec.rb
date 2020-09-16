@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-# rubocop: disable Layout/LineLength
-
 RSpec.describe User, type: :model do
   User.create(email: 'test2@test.com', name: 'mateo', gravatar_url: 'http://google.com', password: 'this is a password')
   test_u1 = User.first
@@ -51,6 +49,4 @@ RSpec.describe User, type: :model do
   it 'Checks the sent_friends_request method' do
     expect(test_u1.sent_friends_request).not_to be_empty
   end
-
 end
-# rubocop: enable Layout/LineLength

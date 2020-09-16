@@ -48,11 +48,11 @@ group :development, :test do
 end
 
 group :test do
+  gem 'database_cleaner-active_record'
   gem 'rspec'
   # Added by us
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'database_cleaner-active_record'
 end
 
 group :development do
