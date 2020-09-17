@@ -41,13 +41,13 @@ class User < ApplicationRecord
   end
 
   def confirm_request(user)
-    friendship = other_friendships.find { |friend| friend.user_id == user }
+    friendship = other_friendships.find { |friend| friend.user_id == user.id }
     friendship.status = true
     friendship.save
   end
 
   def rollback_request(user)
-    friendship = friendships.find { |friend| friend.friend_id == user }
+    friendship = friendships.find { |friend| friend.friend_id == user.id }
     friendship.status = false
     friendship.save
   end
@@ -56,18 +56,21 @@ class User < ApplicationRecord
     total_friends.include?(user)
   end
 
-  def check_friend_request(user)
+  def check_friend_request(userid)
     friendships.each do |friend|
-      return true if friend.friend_id == user
+      return true if friend.friend_id == userid
     end
 
     other_friendships.each do |friend|
-      return true if friend.friend_id == user
-
+      return true if friend.user_id == userid
     end
-    
-    return false
-
+    false
   end
 
+  def check_accept_request(user)
+    other_friendships.each do |friend|
+      return true if friend.user_id == user.id && friend.status == false
+    end
+    false
+  end
 end
