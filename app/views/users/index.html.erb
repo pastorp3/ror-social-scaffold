@@ -5,6 +5,9 @@
         Name: <%= user.name %>
         <span class="profile-link">
           <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+          <span class="profile-link"><%= send_request(user) %></span>
+          <span class="profile-link"><%= accept_request(user) %></span>
+          <span class="profile-link"><%= delete_request(user) %></span>
         </span>
       </li>
     <% end %>
