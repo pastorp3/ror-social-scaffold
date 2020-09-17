@@ -23,7 +23,7 @@ class User < ApplicationRecord
     friends_total
   end
 
-  def sent_friends_request
+  def sent_friend_request
     friends_total = []
     friendships.each do |friend|
       friends_total.push(friend.friend) unless friend.status
@@ -55,4 +55,19 @@ class User < ApplicationRecord
   def friend?(user)
     total_friends.include?(user)
   end
+
+  def check_friend_request(user)
+    friendships.each do |friend|
+      return true if friend.friend_id == user
+    end
+
+    other_friendships.each do |friend|
+      return true if friend.friend_id == user
+
+    end
+    
+    return false
+
+  end
+
 end

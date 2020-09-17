@@ -1,6 +1,9 @@
 require 'rails_helper'
 
+
 RSpec.describe User, type: :model do
+  User.delete_all
+  Friendship.delete_all
   User.create(email: 'test2@test.com', name: 'mateo', gravatar_url: 'http://google.com', password: 'this is a password')
   test_u1 = User.first
   User.create(email: 'test@test.com', name: 'pastor', gravatar_url: 'http://google.com', password: 'this is a password')
