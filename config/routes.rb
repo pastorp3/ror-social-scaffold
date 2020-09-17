@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   get '/friendship/:id', to: 'friendships#Add_friend'
+  post '/friendship/:id', to: 'friendships#Accept'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

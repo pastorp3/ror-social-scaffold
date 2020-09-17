@@ -4,4 +4,8 @@ module UserHelper
 
 	end
 
+	def accept_request(user)
+		link_to 'Aceept', "/friendship/#{user.id}", method: 'post'
+	end
+
 end

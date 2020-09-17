@@ -5,4 +5,8 @@ class FriendshipsController < ApplicationController
 		 newfriend.save
 		 redirect_to users_path
 	end
+
+	def Accept
+		redirect_to 'https://google.com'
+	end
 end
