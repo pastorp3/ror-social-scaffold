@@ -9,5 +9,9 @@ module UserHelper
   def accept_request(user)
     link_to 'Accept Friend Request', "/friendship/#{user.id}", method: 'post' if current_user.check_accept_request(user)
   end
+
+  def delete_request(user)
+  	link_to 'Cancel Friend Request', "/friendship/#{user.id}", method: 'delete' if current_user.friend?(user)
+  end
 end
 # rubocop: enable Style/GuardClause

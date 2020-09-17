@@ -2,6 +2,7 @@
   <h2><%= "Name: #{@user.name}" %></h2>
   <button><%= send_request(@user) %></button>
   <button><%= accept_request(@user) %></button>
+  <button ><%= delete_request(@user) %></button>
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">

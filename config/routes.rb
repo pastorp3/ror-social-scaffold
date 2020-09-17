@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get '/friendship/:id', to: 'friendships#add_friend'
   post '/friendship/:id', to: 'friendships#accept'
+  delete '/friendship/:id', to: 'friendships#cancel_request'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
