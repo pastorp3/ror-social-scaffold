@@ -14,7 +14,9 @@
     Recent posts
   </h3>
   <ul class="posts">
-    <%= render @timeline_posts %>
+    <% Post.all.ordered_by_most_recent.each do |post| %>
+      <% this_post = check_the_post(post) %>
+      <%= render this_post %>
+    <% end %>
   </ul>
-  <%= current_user.inspect %>
 </article>
