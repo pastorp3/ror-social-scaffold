@@ -12,16 +12,11 @@ class FriendshipsController < ApplicationController
   end
 
   def cancel_request
-  	friend = Friendship.where(user_id: current_user.id, friend_id: params[:id])
-  	 if !(friend.empty?)
-  	 	friend[0].destroy
+    friend = Friendship.where(user_id: current_user.id, friend_id: params[:id])
+    friend[0].destroy unless friend.empty?
 
-  	 end
-
-  	friend = Friendship.where(user_id: params[:id] , friend_id: current_user.id)
-  	if !(friend.empty?)
-  		friend[0].destroy
-  	end
-  	redirect_to users_path
+    friend = Friendship.where(user_id: params[:id], friend_id: current_user.id)
+    friend[0].destroy unless friend.empty?
+    redirect_to users_path
   end
 end

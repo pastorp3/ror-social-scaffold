@@ -21,7 +21,6 @@ class PostsController < ApplicationController
 
   def timeline_posts
     @timeline_posts ||= Post.all
-    
   end
 
   def post_params
