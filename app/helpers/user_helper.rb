@@ -11,7 +11,7 @@ module UserHelper
   end
 
   def delete_request(user)
-    link_to 'Cancel Friend Request', "/friendship/#{user.id}", method: 'delete' if current_user.friend?(user)
+    link_to 'Remove Friend', "/friendship/#{user.id}", method: 'delete' if current_user.friend?(user)
   end
 end
 # rubocop: enable Style/GuardClause
