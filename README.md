@@ -1,6 +1,10 @@
-# Scaffold for social media app with Ruby on Rails
+# Social Media Website
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> This is a project to simulate a social media website with all its functionality
+
+![social_media_gif](https://media1.tenor.com/images/a8e963f6d83f61bf82c90f5a8c2a26b5/tenor.gif?itemid=15614780)
+
+This is the 6th project of the Microverse Technical curriculum for Ruby on Rails. The initial code was forked from the [Microverse repo](https://github.com/microverseinc/ror-social-scaffold.git) and then added the friendship functionality, allowing users to friend other users and only showing the posts from their friends on the timeline
 
 ## Built With
 
@@ -9,7 +13,7 @@
 
 ## Live Demo
 
-TBA
+[Check the app out!!!](https://pure-badlands-10193.herokuapp.com/posts)
 
 
 ## Getting Started
@@ -37,16 +41,6 @@ Setup database with:
    rails db:migrate
 ```
 
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
-
-
 ### Usage
 
 Start server with:
@@ -59,19 +53,32 @@ Open `http://localhost:3000/` in your browser.
 
 ### Run tests
 
+To run the tests just excecute this command from the root project folder
+
 ```
     rpsec --format documentation
 ```
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
 ### Deployment
 
-TBA
+To deploy the app you can follow [this guide](https://devcenter.heroku.com/articles/getting-started-with-rails5) where you have a step by step instructions on how to do it.
+
+Don't forget to merge the development branch into the master branch so heroku can get to it.
 
 ## Authors
 
-TBA
+👤 **Mateo mojica**
+
+- Github: [@mateomh](https://github.com/mateomh)
+- Twitter: [@mateo_m_h](https://twitter.com/mateo_m_h)
+- Linkedin: [Mateo mojica](https://linkedin.com/mateo_mojica_hernandez)
+
+👤 **José Pedraza**
+
+- Github: [@pastorp3](https://github.com/pastorp3)
+- Twitter: [@jose_pastor](https://twitter.com/jose_pastorp3 )
+- Linkedin: [linkedin](https://www.linkedin.com/in/jos%C3%A9-pedraza-acevedo-ab700a1a9/)
 
 ## 🤝 Contributing
 
@@ -85,9 +92,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+- Microverse
+- Odin Project
 
 ## 📝 License
 
-TBA
-
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
