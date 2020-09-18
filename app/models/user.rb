@@ -44,7 +44,7 @@ class User < ApplicationRecord
     friendship = other_friendships.find { |friend| friend.user_id == user.id }
     friendship.status = true
     friendship.save
-    Friendship.create(user_id: self.id, friend_id: user.id, status: true)
+    Friendship.create(user_id: id, friend_id: user.id, status: true)
   end
 
   def rollback_request(user)
